@@ -1,0 +1,417 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+.left-section, .right-section {
+    flex: 1;
+}
+
+.middle-section {
+    flex: 2;
+}
+
+section {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for logout button */
+.btn-logout {
+    background-color: #f44336; /* Red background color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding inside the button */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline from text */
+    display: inline-block; /* Display as inline-block */
+    font-size: 16px; /* Font size */
+    margin-top: 10px; /* Top margin */
+    margin-right: 10px; /* Right margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    float: left; /* Float right to position at the top right corner */
+    border-radius: 4px; /* Rounded edges */
+}
+
+.btn-logout:hover {
+    background-color: #d32f2f; /* Darker red background color on hover */
+}
+
+/* Transaction Table */
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transaction-table th, .transaction-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.transaction-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.transaction-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.transaction-table tr:hover {
+    background-color: #ddd;
+}
+
+.transaction-container {
+    max-height: 250px; /* Adjust the max-height as needed */
+    overflow-y: auto;
+}
+
+.transaction-table th,
+.transaction-table td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.btn-edit-profile {
+    margin-top: 10px;
+}
+
+/* Modal Styling */
+.modal-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1000; /* Higher than other content */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+}
+
+.modal form {
+    display: grid;
+    gap: 10px;
+}
+
+.modal label {
+    font-weight: bold;
+}
+
+.modal input[type=text],
+.modal input[type=number] {
+    width: calc(100% - 10px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.modal button[type=submit] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.modal button[type=submit]:hover {
+    background-color: #0056b3;
+}
+
+.dynamic-content {
+    display: none; /* Initially hide dynamic content */
+}
+
+.show {
+    display: block; /* Show dynamic content */
+}
+
+/* Style for the Send Money button */
+.btn-send-money {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for the Send Money button */
+.btn-send-money:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+/* Style for the Show Transactions button */
+.btn-show-transactions {
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for the Show Transactions button */
+.btn-show-transactions:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for the account details table */
+.account-details {
+    width: 100%;
+    max-width: 600px; /* Adjust maximum width as per your layout */
+    margin-top: 10px;
+    border-collapse: collapse;
+    border: 1px solid #ddd; /* Add border around the table */
+}
+
+.account-details td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd; /* Bottom border for each row */
+    text-align: center;
+}
+
+.account-details .label {
+    font-weight: bold;
+}
+
+.account-details .green {
+    background-color: #4CAF50; /* Green background for first column */
+    color: white;
+}
+
+.account-details tr:nth-child(even) td:not(.label) {
+    background-color: #ffffff; /* Light gray background for even rows */
+}
+
+.account-details tr:nth-child(odd) td:not(.label) {
+    background-color: #ffffff; /* White background for odd rows */
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    max-width: 80%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    color: #ffffff; /* Text color */
+    background-color: #ff6347; /* Button background color */
+    border-radius: 100%; /* Rounded button */
+}
+
+.right-section {
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    margin-bottom: 20px; /* Added margin to create space between sections */
+}
+
+.right-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem; /* Adjust font size as needed */
+    color: #333; /* Dark gray text color */
+}
+
+.right-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.right-section li {
+    margin-bottom: 10px;
+    border-left: 3px solid #007bff; /* Blue border left */
+    padding-left: 10px;
+}
+
+.right-section li a {
+    text-decoration: none;
+    color: #333; /* Dark gray text color */
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.right-section li a:hover {
+    background-color: #e9ecef; /* Light gray background on hover */
+}
+
+/* Added for responsiveness */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .left-section, .middle-section, .right-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* CSS for the Send Money form */
+#sendMoneyForm {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#sendMoneyForm h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#sendMoneyForm form {
+    display: grid;
+    gap: 15px;
+}
+
+#sendMoneyForm label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#sendMoneyForm input[type="text"],
+#sendMoneyForm input[type="number"],
+#sendMoneyForm select,
+#sendMoneyForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensure padding does not affect the width */
+}
+
+#sendMoneyForm button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#sendMoneyForm button[type="submit"]:hover {
+    background-color: #0056b3;
+}
